@@ -1,0 +1,44 @@
+#Material 이후에 적는것들은, 마인크래프트 Material Enum과 똑같은 이름을 사용합니다
+#$$ 사이에 들어가는것은, 마인크래프트 ChatColor Enum과 똑같은 이름을 사용합니다
+#그외, ## 사이에 들어가는 것은 값입니다. 사용 가능한값은 level, exp, expNeed 이지만, 오직 text, prefix, guititle에서만 사용 가능합니다
+#Lore의 경우, 여러줄을 추가할 수 있도록 되어있습니다.
+#Lore:
+#    - "$BLACK$__"
+#    - "$YELLOW$__"
+#이러면 __ 가 다른 색상으로 2줄 있을겁니다
+text: "$DARK_BLUE$$BOLD$레벨: #level#$YELLOW$ 경험치: #exp#/#expNeeded#"
+prefix: "[$BLUE$Level$RESET$]"
+guititle: ""
+gui: "##########A#D#H#S##########"
+defaultStatPointPerLevelUp: 3
+StatPointPerLevelUpAfterSettingLevelTo0: 1
+BLANK:
+  Material: BEDROCK
+  Name: "[$BLACK$/$RESET]"
+  Lore:
+    - "$BLACK$__"
+  Count: 1
+ATTACK:
+  Material: DIAMOND_SWORD
+  Name: "[$RED$공격력$RESET]"
+  Lore:
+    - "$BLUE$공격력 스탯을 업그레이드 합니다. 주는 대미지가 증가합니다."
+  Count: 1
+DEFENSE:
+  Material: DIAMOND_CHESTPLATE
+  Name: "[$GRAY$방어력$RESET$]"
+  Lore:
+    - "$BLUE$방어력 스탯을 업그레이드 합니다. 받는 대미지가 줄어듭니다."
+  Count: 1
+HEALTH:
+  Material: REDSTONE
+  Name: "[$LIGHT_PURPLE$체력$RESET]"
+  Lore:
+    - "$BLUE$체력 스탯을 업그레이드 합니다. 최대체력이 증가합니다."
+  Count: 1
+AGILITY:
+  Material: DIAMOND_BOOTS
+  Name: "[$YELLOW$민첩성$RESET]"
+  Lore:
+    - "$BLUE$민첩 스탯을 업그레이드 합니다. 공격속도, 회피확률 및 기본 속도가 증가합니다"
+  Count: 1

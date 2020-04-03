@@ -1,0 +1,50 @@
+#밑에 있는 식들은 말만 된다면 언제든지 바꾸셔도 상관없습니다
+#예시:
+#levels:
+#    1~50: level*100 -> 레벨 1부터 50까지는 레벨업 할때 필요한 경험치가 현제 레벨*100, 즉 레벨 2일때 레벨 3이 되기 위해서는 2*100 = 200 만큼의 경험치가 필요함
+#    50~100: level*200 -> 51부터 100까지는 현제 레벨*200 만큼의 경험치가 필요함
+#사용가능한 값:level(플레이어의 레벨)
+#attack:
+#    0~100: AttackDamage+AttackDamage*(damage*0.02) ->공격력 스탯1부터 100까지 적용됨, 다이아몬드 검으로 공격했을시, 7+7*(50*0.02) = 7+7*1=14
+#사용가능한 값:AttackDamage(플레이어가 준 대미지), damage(플레이어의 대미지 스탯)
+#defense:
+#    0~100: AttackDamage-AttackDamage/(300/defense) -> 받은 대미지가 14이고, 방어력 스탯은 50이라면, 14-14/(300/50) = 14-14/6 = 11.66666666..
+#사용가능한 값:AttackDamage(플레이어가 준 대미지), defense(플레이어의 방어력 스탯)
+#walkspeed:
+#    0~100: DefaultSpeed+DefaultSpeed*(speed*0.02) -> 기본속도 + 기본속도(속도스탯*0.02), 속도스탯이 50이라면, 0.2+0.2(50*0.02) = 0.2+0.2 = 0.4
+#사용가능한 값:DefaultSpeed(0.2), PlayerSpeed(현제 플레이어 속도), speed(플레이어 속도 스탯)
+#attackspeed:
+#    0~100: PlayerAttackSpeed - PlayerAttackSpeed*((speed*2)/300) -> 기본 공격속도 - 기본공격속도*((속도스탯*2)/300), 속도스탯이 50이라면, 10 - 10*(1/3) = 10 - 10/3 = 6.666666...
+#사용가능한 값:PlayerAttackSpeed(플레이어 공격속도, 20당 1초이며 기본값은 10), speed(플레이어 속도 스탯)
+#dodgechance:
+#    0~100: speed/15 - 회피확률 -> 속도스탯이 50이라면, 회피확률은 7.142857142857..%
+#health:
+#    0~100: PlayerHealth+(health*0.4) -> 플레이어 HP+(체력스탯*0.4), 체력스탯이 50이라면, 20+(50*0.4)= 20+20 = 40, 즉 HP 2배
+#exps:
+#   0~100: exp + MobLevel*10 -> 플레이어의 경험치를, 플레이어 경험치 + 몬스터의 레벨*10 으로 지정, 경험치가 10이고, 몬스터 레벨이 2라면, 10 + (2*10) = 10+20 = 30, 플레이어의 경험치를 30으로 지정
+#사용가능한 값:level(플레이어 레벨), exp(플레이어 경험치), MobLevel(몬스터의 레벨)
+#주의할점:위의 식은 더하기가 아닌 지정이다. 그러니 대부분의 상황에서는 exp 라는 값에다가 더해야 할것이다
+#주의할점:이 식들은 무조건 성립해야하며, 참/거짓 이 아닌 어떠한 값이 나와야만함
+levels:
+    1~50: level*100
+    51~100: level*200
+
+attack:
+    0~100: AttackDamage+(damage*0.02)
+defense:
+    0~100: AttackDamage-AttackDamage/(300/defense)
+
+walkspeed:
+    0~100: DefaultSpeed+DefaultSpeed*(speed*0.02)
+
+attackspeed:
+    0~100: PlayerAttackSpeed - PlayerAttackSpeed*((speed*2)/300)
+
+dodgechance:
+    0~100: speed/7
+
+health:
+    0~100: PlayerHealth+(health*0.4)
+
+exp:
+    0~100: exp + MobLevel*10

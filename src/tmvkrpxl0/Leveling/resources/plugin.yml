@@ -1,0 +1,10 @@
+name: Leveling
+version: 0.1.1
+author: tmvkrpxl0
+description: 간단한 레벨링 플러그인 입니다!
+main: tmvkrpxl0.Leveling.java.LevelingMain
+commands:
+   레벨링:
+      description: 플레이어들의 레벨 및 경험치를 확인 및 설정 하는 명령어 입니다
+      usage: /레벨링 <명령>
+      aliases: [leveling, Leveling]
